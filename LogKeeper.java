@@ -22,7 +22,7 @@ public class LogKeeper implements Runnable {
         String store = "";
         String OS = System.getProperty("os.name").toLowerCase();
         if(OS.indexOf("win") >= 0){
-            store = "C:/Users/NAUSHAD/Desktop/";
+            store = "C:/";
         } else if(OS.indexOf("nix") >= 0 || OS.indexOf("nux") >= 0 || OS.indexOf("aix") > 0 ){
             store = "/home/";
         } else  if(OS.indexOf("mac") >= 0){
@@ -41,7 +41,7 @@ public class LogKeeper implements Runnable {
                 try {
 
                     //The file ,size of which is to be saved into another file (a.txt)
-                    File file = new File(checkOS() + "test.txt");
+                    File file = new File(checkOS() + "a.txt");
                     float store = file.length();
                     store = store/1024 ;
 
@@ -50,7 +50,7 @@ public class LogKeeper implements Runnable {
                     *   One is the location of the file (b.txt) in which the log is to be written
                     *  And another is boolean. i.e; true meaning that is data in the file won't be overewritten.
                     */
-                    FileOutputStream out = new FileOutputStream(checkOS() + "SaveSize.txt", true);
+                    FileOutputStream out = new FileOutputStream(checkOS() + "b.txt", true);
                     Date date = new Date();
                     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
 
